@@ -5,7 +5,7 @@ export const ChangePassword = () => {
 
   return (
     <div className="w-full h-full bg-[#fff] rounded-[10px] p-[30px]">
-      <h2 className="text-2xl text-[#4285F4] font-bold">Lịch sử giao dịch</h2>
+      <h2 className="text-2xl text-[#4285F4] font-bold">Thay đổi mật khẩu</h2>
       <form
         onSubmit={handleSubmit}
         className="w-full flex flex-col justify-center mt-32"
