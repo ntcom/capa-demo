@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const ChangePassword = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,9 +56,9 @@ export const ChangePassword = () => {
           </div>
         </div>
 
-        <button className="mt-14 w-full max-w-[400px] h-[50px] self-center rounded-[10px] bg-[#4285F4] text-[22px] text-[#fff] font-bold">
+        <Link to={'/login'} className="mt-14 w-full max-w-[400px] h-[50px] self-center rounded-[10px] bg-[#4285F4] text-[22px] text-[#fff] font-bold flex justify-center items-center">
           Thay đổi mật khẩu
-        </button>
+        </Link>
       </form>
     </div>
   );
