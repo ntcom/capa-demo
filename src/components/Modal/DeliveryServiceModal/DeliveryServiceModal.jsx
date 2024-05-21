@@ -57,9 +57,9 @@ const infoData = [
   {
     id: 5,
     name: "info",
-    label: "Công ty Cổ phần Alaric | 0888888888",
+    label: "Công ty Cổ phần A | 0888888888",
     location: "3Q9X+J2W, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội, Vietnam",
-    value: "Alaric",
+    value: "A",
   },
   {
     id: 6,

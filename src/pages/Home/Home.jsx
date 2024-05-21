@@ -1,4 +1,3 @@
-import { useState } from "react";
 import camera from "../../assets/svgs/camera.svg";
 import cardLogo from "../../assets/svgs/logo-card.svg";
 import Input from "../../components/Input";
@@ -40,7 +39,7 @@ export const Home = () => {
       return item.id;
     }
   } )
-  const [defaultAddress, setDefaultAddress] = useState(checkCard[0].id)
+  const defaultAddress = checkCard[0].id;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,12 +61,12 @@ export const Home = () => {
           </label>
 
           <div className="flex flex-col gap-5">
-            <Input label={"Mã"} id={"code"} value={"#876370"} height={"50px"} />
+            <Input label={"Mã"} id={"code"} defaultValue={"#876370"} height={"50px"} />
             <Input
               label={"Tên"}
               required={true}
               id={"name"}
-              value={"Nguyen Tran Nhiem"}
+              defaultValue={"Nguyen Tran Nhiem"}
               height={"50px"}
             />
             <div className="flex gap-[30px]">
@@ -75,15 +74,16 @@ export const Home = () => {
                 label={"Email"}
                 required={true}
                 id={"email"}
-                value={"nguyennhiem@gmail.com"}
+                defaultValue={"nguyennhiem@gmail.com"}
                 width={"48%"}
                 height={"50px"}
               />
               <Input
+                type={'number'}
                 label={"Số điện thoại"}
                 required={true}
                 id={"phonenumber"}
-                value={"0123456789"}
+                defaultValue={"0123456789"}
                 width={"48%"}
                 height={"50px"}
               />

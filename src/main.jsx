@@ -20,6 +20,10 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        path: "/",
+        element: <Home />,
+      },
+      {
         path: "profile",
         element: <Home />,
       },
@@ -32,16 +36,16 @@ const router = createBrowserRouter([
         element: <Wallet />,
       },
       {
-        path: "order/delivery-service",
+        path: "delivery-service",
         element: <DeliveryService />,
         
       },
       {
-        path: "order/delivery-service/:deliveryServiceId",
+        path: "delivery-service/:deliveryServiceId",
         element: <DeliveryServiceDetail />
       },
       {
-        path: "order/order-service",
+        path: "order-service",
         element: <OrderService />,
       },
     ],
