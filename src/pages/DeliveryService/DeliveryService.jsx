@@ -13,10 +13,10 @@ const dataTable = [
     code: "S00924",
     date: "15/05/2024",
     time: "10:10:44",
-    tracking: "",
+    product: "",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Sale",
   },
   {
@@ -24,10 +24,10 @@ const dataTable = [
     code: "S00923",
     date: "15/05/2024",
     time: "10:09:34",
-    tracking: "",
+    product: "",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Sale",
   },
   {
@@ -35,10 +35,10 @@ const dataTable = [
     code: "S00911",
     date: "14/05/2024",
     time: "17:29:22",
-    tracking: "",
+    product: "",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Sale",
   },
   {
@@ -46,10 +46,10 @@ const dataTable = [
     code: "S00910",
     date: "14/05/2024",
     time: "17:26:33",
-    tracking: "",
+    product: "",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Draft",
   },
   {
@@ -57,10 +57,10 @@ const dataTable = [
     code: "S00902",
     date: "14/05/2024",
     time: "15:43:19",
-    tracking: "AD019",
+    product: "AD019",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Draft",
   },
   {
@@ -68,10 +68,10 @@ const dataTable = [
     code: "S00894",
     date: "13/05/2024",
     time: "14:08:12",
-    tracking: "TRACk1",
+    product: "TRACk1",
     quantity: 1,
-    mass: 0,
     totalPrice: 3984000,
+    deposits: 0,
     status: "Sale",
   },
   {
@@ -79,10 +79,10 @@ const dataTable = [
     code: "S00892",
     date: "13/05/2024",
     time: "14:00:34",
-    tracking: "TRACK2",
+    product: "TRACK2",
     quantity: 1,
-    mass: 8,
     totalPrice: 1593600,
+    deposits: 8,
     status: "Sale",
   },
   {
@@ -90,10 +90,10 @@ const dataTable = [
     code: "S00890",
     date: "13/05/2024",
     time: "13:58:24",
-    tracking: "TRACK1",
+    product: "TRACK1",
     quantity: 1,
-    mass: 8,
     totalPrice: 1593600,
+    deposits: 8,
     status: "Sale",
   },
   {
@@ -101,10 +101,10 @@ const dataTable = [
     code: "S00889",
     date: "13/05/2024",
     time: "13:55:37",
-    tracking: "",
+    product: "",
     quantity: 0,
-    mass: 0,
     totalPrice: 0,
+    deposits: 0,
     status: "Draft",
   },
   {
@@ -112,10 +112,10 @@ const dataTable = [
     code: "S00888",
     date: "13/05/2024",
     time: "13:47:19",
-    tracking: "TRACK0",
+    product: "TRACK0",
     quantity: 1,
-    mass: 10,
     totalPrice: 1992000,
+    deposits: 10,
     status: "Sale",
   },
 ];
@@ -155,16 +155,16 @@ export const DeliveryService = () => {
             {line.date}
           </td>
           <td className="w-full max-w-[21.7%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
-            {line.tracking}
+            {line.product}
           </td>
-          <td className="w-full max-w-[10%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-full max-w-[8%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.quantity}
-          </td>
-          <td className="w-full max-w-[10%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
-            {line.mass}
           </td>
           <td className="w-full max-w-[15.85%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.totalPrice}
+          </td>
+          <td className="w-full max-w-[12%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+            {line.deposits}
           </td>
           <td
             className={`flex items-center justify-center shrink-0 w-[80px] h-[35px] ${
@@ -233,7 +233,7 @@ export const DeliveryService = () => {
               STT
             </th>
             <th className="w-[110px] xl:w-full xl:max-w-[10.38%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
-              Mã{" "}
+              Mã đơn hàng{" "}
               <img
                 src={arrowDown}
                 alt=""
@@ -253,7 +253,7 @@ export const DeliveryService = () => {
               />
             </th>
             <th className="w-[230px] xl:w-full xl:max-w-[21.7%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
-              Mã tracking{" "}
+              Sản phẩm{" "}
               <img
                 src={arrowDown}
                 alt=""
@@ -262,18 +262,8 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[110px] xl:w-full xl:max-w-[10%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
-              Số gói hàng{" "}
-              <img
-                src={arrowDown}
-                alt=""
-                className={`block shrink-0 w-[7px] h-[6px] ${
-                  soft === "old" && "rotate-180"
-                }`}
-              />
-            </th>
-            <th className="w-[110px] xl:w-full xl:max-w-[10%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
-              Khối lượng{" "}
+            <th className="w-[90px] xl:w-full xl:max-w-[8%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+              Số lượng{" "}
               <img
                 src={arrowDown}
                 alt=""
@@ -284,6 +274,16 @@ export const DeliveryService = () => {
             </th>
             <th className="w-[168px] xl:w-full xl:max-w-[15.85%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Tổng số tiền{" "}
+              <img
+                src={arrowDown}
+                alt=""
+                className={`block shrink-0 w-[7px] h-[6px] ${
+                  soft === "old" && "rotate-180"
+                }`}
+              />
+            </th>
+            <th className="w-[130px] xl:w-full xl:max-w-[12%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+              Đã đặt cọc{" "}
               <img
                 src={arrowDown}
                 alt=""
