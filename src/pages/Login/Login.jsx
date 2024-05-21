@@ -13,10 +13,17 @@ import vector3 from "../../assets/svgs/login/vector3.svg";
 import vector4 from "../../assets/svgs/login/vector4.svg";
 import vector5 from "../../assets/svgs/login/vector5.svg";
 import vector6 from "../../assets/svgs/login/vector6.svg";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [eye, setEye] = useState(false);
-  const [passVal, setPassVal] = useState(null);
+  const [passVal, setPassVal] = useState('');
+  const navigation = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigation("/");
+  };
 
   return (
     <div
@@ -27,7 +34,7 @@ export const Login = () => {
       }}
     >
       <div>
-        <h2 className="text-[#fff] text-3xl md:text-[58px] 2xl:text-[68px] font-semibold leading-normal text-center">
+        <h2 className="text-[#fff] text-[46px] md:text-[58px] 2xl:text-[68px] font-semibold leading-normal text-center">
           Login
         </h2>
         <p className="text-[#fff] text-xs md:text-sm 2xl:text-base font-normal text-center">
@@ -43,13 +50,13 @@ export const Login = () => {
         </p>
       </div>
       <form
-        action=""
+        onSubmit={handleSubmit}
         style={{
           background:
             "linear-gradient(116deg, rgba(255, 255, 255, 0.44) -0.2%, rgba(255, 255, 255, 0.00) 122.69%)",
           // backdropFilter: "blur(2px)",
         }}
-        className="w-full max-w-[340px] md:max-w-[420px] 2xl:max-w-[480px] p-6 md:p-8 2xl:p-11 rounded-xl flex flex-col items-start gap-5 md:gap-6 2xl:gap-8"
+        className="w-full max-w-[340px] md:max-w-[420px] 2xl:max-w-[480px] p-6 md:p-8 2xl:p-11 rounded-xl flex flex-col items-start gap-5 md:gap-6 2xl:gap-8 z-[998]"
       >
         <div className="w-full flex flex-col gap-2 md:gap-3 2xl:gap-4">
           <label
@@ -64,6 +71,7 @@ export const Login = () => {
               className="w-full h-10 md:h-12 2xl:h-14 bg-[#fff] p-[10px_16px_10px_44px] md:p-[12px_24px_12px_54px] 2xl:p-[12px_24px_12px_64px] outline-none rounded-xl text-sm md:text-lg 2xl:text-xl font-normal placeholder:text-[#BABABA]"
               id="username"
               placeholder="Your Username"
+              required
             />
             <img
               src={user}
@@ -84,12 +92,13 @@ export const Login = () => {
             <input
               type={eye ? "text" : "password"}
               className={`w-full h-10 md:h-12 2xl:h-14 bg-[#fff] p-[10px_44px_10px_44px] md:p-[12px_52px_12px_54px] 2xl:p-[12px_60px_12px_64px] outline-none rounded-xl ${
-                eye || passVal === null
+                eye || passVal === ''
                   ? "text-sm md:text-lg 2xl:text-xl"
                   : "text-xl md:text-2xl 2xl:text-[38px] text-[#1f1f1f]"
-              } font-normal placeholder:text-sm placeholder:sx:text-xl placeholder:md:text-2xl placeholder:leading-6 placeholder:text-[#BABABA]`}
+              } font-normal placeholder:text-sm placeholder:md:text-lg placeholder:2xl:text-xl placeholder:leading-6 placeholder:text-[#BABABA]`}
               id="password"
               placeholder="Your Password"
+              required
               onChange={(e) => setPassVal(e.target.value)}
             />
             <div
@@ -151,12 +160,36 @@ export const Login = () => {
           </li>
         </ul>
       </form>
-      <img src={vector1} alt="" className="absolute max-w-[8%] top-[43%] left-0" />
-      <img src={vector2} alt="" className="absolute max-w-[5%] top-[13%] left-[24%]" />
-      <img src={vector3} alt="" className="absolute max-w-[6.6%] bottom-[12%] left-[27%]" />
-      <img src={vector4} alt="" className="absolute max-w-[8%] top-[25%] right-[22%]" />
-      <img src={vector5} alt="" className="absolute max-w-[8%] bottom-[26.8%] right-[30.8%]" />
-      <img src={vector6} alt="" className="absolute max-w-[7%] bottom-[-1.8%] right-[-1%]" />
+      <img
+        src={vector1}
+        alt=""
+        className="absolute max-w-[8%] top-[43%] left-0"
+      />
+      <img
+        src={vector2}
+        alt=""
+        className="absolute max-w-[5%] top-[13%] left-[24%]"
+      />
+      <img
+        src={vector3}
+        alt=""
+        className="absolute max-w-[6.6%] bottom-[12%] left-[27%]"
+      />
+      <img
+        src={vector4}
+        alt=""
+        className="absolute max-w-[8%] top-[25%] right-[22%]"
+      />
+      <img
+        src={vector5}
+        alt=""
+        className="absolute max-w-[8%] bottom-[26.8%] right-[30.8%]"
+      />
+      <img
+        src={vector6}
+        alt=""
+        className="absolute max-w-[7%] bottom-[-1.8%] right-[-1%]"
+      />
     </div>
   );
 };
