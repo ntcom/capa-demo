@@ -125,7 +125,7 @@ export const OrderService = () => {
           </td>
           <td className="shrink-0 w-full max-w-[112px] xl:w-full xl:max-w-[10.26%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             <Link
-              to={`/order/order-service/${line.code}`}
+              to={`/order-service/${line.code}`}
               className="text-[#4285F4] hover:underline"
             >
               {line.code}
