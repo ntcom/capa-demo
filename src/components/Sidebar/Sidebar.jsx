@@ -4,14 +4,13 @@ import infoIcon from "../../assets/svgs/info.svg";
 import infoIconActive from "../../assets/svgs/info-active.svg";
 import passwordIcon from "../../assets/svgs/password.svg";
 import passwordIconActive from "../../assets/svgs/password-active.svg";
-import walletIcon from "../../assets/svgs/wallet.svg";
-import walletIconActive from "../../assets/svgs/wallet-active.svg";
+// import walletIcon from "../../assets/svgs/wallet.svg";
+// import walletIconActive from "../../assets/svgs/wallet-active.svg";
 import contractIcon from "../../assets/svgs/contract.svg";
 import contractIconActive from "../../assets/svgs/contract-active.svg";
-import getIcon from "../../assets/svgs/get.svg";
-import getIconActive from "../../assets/svgs/get-active.svg";
+// import getIcon from "../../assets/svgs/get.svg";
+// import getIconActive from "../../assets/svgs/get-active.svg";
 import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 const navs = [
   {
@@ -28,52 +27,45 @@ const navs = [
     iconActive: passwordIconActive,
     link: "/change-password",
   },
-  {
-    id: 3,
-    name: "Ví",
-    icon: walletIcon,
-    iconActive: walletIconActive,
-    link: "/wallet",
-    children: [
-      {
-        id: 11,
-        name: "Lịch sử giao dịch",
-      },
-      {
-        id: 12,
-        name: "Nạp tiền",
-      },
-      {
-        id: 13,
-        name: "Rút tiền",
-      },
-    ],
-  },
+  // {
+  //   id: 3,
+  //   name: "Ví",
+  //   icon: walletIcon,
+  //   iconActive: walletIconActive,
+  //   link: "/wallet",
+  //   children: [
+  //     {
+  //       id: 11,
+  //       name: "Lịch sử giao dịch",
+  //     },
+  //     {
+  //       id: 12,
+  //       name: "Nạp tiền",
+  //     },
+  //     {
+  //       id: 13,
+  //       name: "Rút tiền",
+  //     },
+  //   ],
+  // },
   {
     id: 4,
-    name: "Đơn hàng ký gửi",
+    name: "Đơn hàng",
     icon: contractIcon,
     iconActive: contractIconActive,
     link: "/delivery-service",
   },
-  {
-    id: 5,
-    name: "Đơn hàng mua hộ",
-    icon: getIcon,
-    iconActive: getIconActive,
-    link: "/order-service",
-  },
+  // {
+  //   id: 5,
+  //   name: "Đơn hàng mua hộ",
+  //   icon: getIcon,
+  //   iconActive: getIconActive,
+  //   link: "/order-service",
+  // },
 ];
 
 export const Sidebar = () => {
   const { pathname } = useLocation();
-  const navigation = useNavigate();
-
-  setTimeout(() => {
-    if(pathname === '/') {
-      navigation('profile')
-    }
-  }, 1)
 
   return (
     <aside className="fixed top-0 left-0 bottom-0 shrink-0 w-[218px] 2xl:w-[268px] h-screen bg-[#fff]">

@@ -1,7 +1,17 @@
 import { Outlet } from "react-router-dom";
 import { Sidebar } from "../components/Sidebar/Sidebar";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const Root = () => {
+  const { pathname } = useLocation();
+  const navigation = useNavigate();
+
+  window.onload = () => {
+    if (pathname === "/") {
+      navigation("profile");
+    }
+  };
+
   return (
     <div className="w-full h-auto min-h-screen flex">
       <Sidebar />
