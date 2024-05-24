@@ -188,7 +188,7 @@ export const DeliveryService = () => {
 
   return (
     <>
-      <h2 className="text-2xl text-[#4285F4] font-bold">Đơn hàng ký gửi</h2>
+      <h2 className="text-2xl text-[#4285F4] font-bold">Đơn hàng</h2>
 
       <div className="w-full flex justify-between mt-8">
         <GroupFuncKeys
