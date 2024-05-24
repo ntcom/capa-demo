@@ -1,5 +1,5 @@
 import camera from "../../assets/svgs/camera.svg";
-import cardLogo from "../../assets/svgs/logo-card.svg";
+import cardLogo from "../../assets/imgs/logo.png";
 import Input from "../../components/Input";
 import SelectCustom from "../../components/SelectCustom/SelectCustom";
 
@@ -131,7 +131,7 @@ export const Home = () => {
                 key={item.id}
                 className="w-full p-[25px_32px] bg-[#FAFAFB] rounded-md mt-5 relative"
               >
-                <div className="w-[30px]">
+                <div className="w-[80px]">
                   <img src={cardLogo} alt="" />
                 </div>
 
