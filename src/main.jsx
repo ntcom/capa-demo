@@ -12,6 +12,7 @@ import { DeliveryServiceDetail } from "./pages/DeliveryService/DeliveryServiceDe
 import { OrderService } from "./pages/OrderService/OrderService.jsx";
 import { Wallet } from "./pages/Wallet/Wallet.jsx";
 import { ChangePassword } from "./pages/ChangePassword/ChangePassword.jsx";
+import { DeliveryServiceTransport } from "./pages/DeliveryService/DeliveryServiceTransport.jsx";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "delivery-service/:deliveryServiceId",
         element: <DeliveryServiceDetail />
+      },
+      {
+        path: "delivery-service/transport/:deliveryServiceId",
+        element: <DeliveryServiceTransport />
       },
       {
         path: "order-service",

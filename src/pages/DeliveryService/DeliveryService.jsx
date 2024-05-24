@@ -1,11 +1,15 @@
 import { useState } from "react";
 import search from "../../assets/svgs/search.svg";
-import plus from "../../assets/svgs/plus.svg";
+// import plus from "../../assets/svgs/plus.svg";
 import arrowDown from "../../assets/svgs/arrow-down.svg";
 import calendar from "../../assets/svgs/calendar.svg";
 import { Link } from "react-router-dom";
-import DeliveryServiceModal from "../../components/Modal/DeliveryServiceModal/DeliveryServiceModal";
+// import DeliveryServiceModal from "../../components/Modal/DeliveryServiceModal/DeliveryServiceModal";
 import GroupFuncKeys from "../../components/GroupFuncKeys";
+import arrowItemUp from "../../assets/svgs/arrow-item-up.svg";
+import arrowItemDown from "../../assets/svgs/arrow-item-down.svg";
+// import arrowItemDown from "../../assets/svgs/arrow-item-down.svg"
+import bitmap from "../../assets/svgs/bitmap.svg";
 
 const dataTable = [
   {
@@ -17,7 +21,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Sale",
+    status: "New",
   },
   {
     stt: 2,
@@ -28,7 +32,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Sale",
+    status: "Transport",
   },
   {
     stt: 3,
@@ -39,7 +43,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Sale",
+    status: "Complete",
   },
   {
     stt: 4,
@@ -50,7 +54,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Draft",
+    status: "Cancel",
   },
   {
     stt: 5,
@@ -61,7 +65,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Draft",
+    status: "Transport",
   },
   {
     stt: 6,
@@ -72,7 +76,7 @@ const dataTable = [
     quantity: 1,
     totalPrice: 3984000,
     deposits: 0,
-    status: "Sale",
+    status: "Complete",
   },
   {
     stt: 7,
@@ -83,7 +87,7 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1593600,
     deposits: 8,
-    status: "Sale",
+    status: "Transport",
   },
   {
     stt: 8,
@@ -94,7 +98,7 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1593600,
     deposits: 8,
-    status: "Sale",
+    status: "New",
   },
   {
     stt: 9,
@@ -105,7 +109,7 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Draft",
+    status: "Complete",
   },
   {
     stt: 10,
@@ -116,21 +120,49 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1992000,
     deposits: 10,
-    status: "Sale",
+    status: "Complete",
+  },
+];
+
+const orderReport = [
+  {
+    id: 1,
+    title: "Đơn giá",
+    data: "$35k",
+    increase: 15,
+    decrease: 3.5,
+  },
+  {
+    id: 2,
+    title: "Tổng tiền",
+    data: "$2,435k",
+    decrease: 3.5,
+  },
+  {
+    id: 3,
+    title: "Đơn huỷ",
+    data: 3,
+    increase: 15,
+  },
+  {
+    id: 4,
+    title: "Đang vận chuyển",
+    data: 28,
+    increase: 10,
   },
 ];
 
 export const DeliveryService = () => {
-  const [openModal, setOpenModal] = useState(false);
+  // const [openModal, setOpenModal] = useState(false);
   const [openFilter, setOpenFilter] = useState(false);
   const [filterSelect, setFilterSelect] = useState("all");
   const [soft, setSoft] = useState("new");
 
-  if (openModal) {
-    document.querySelector("body").style.overflow = "hidden";
-  } else {
-    document.querySelector("body").style.overflow = "unset";
-  }
+  // if (openModal) {
+  //   document.querySelector("body").style.overflow = "hidden";
+  // } else {
+  //   document.querySelector("body").style.overflow = "unset";
+  // }
 
   const renderDataTable = () => {
     return dataTable.map((line) => {
@@ -142,40 +174,50 @@ export const DeliveryService = () => {
           <td className="w-full max-w-[6.98%] text-[#030229] text-xs text-center font-normal">
             {line.stt}
           </td>
-          <td className="w-full max-w-[10.38%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[110px] xl:w-full xl:max-w-[10.38%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             <Link
-              to={`/delivery-service/${line.code}`}
+              to={line.status === "Transport" ? `transport/${line.code}` : `/delivery-service/${line.code}`}
               className="text-[#4285F4] hover:underline"
             >
               {line.code}
             </Link>
           </td>
-          <td className="w-full max-w-[17.17%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[182px] xl:w-full xl:max-w-[15.17%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             <img src={calendar} alt="" className="block shrink-0 w-[12.6px]" />
             {line.date}
           </td>
-          <td className="w-full max-w-[21.7%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[230px] xl:w-full xl:max-w-[21.7%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.product}
           </td>
-          <td className="w-full max-w-[8%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[90px] xl:w-full xl:max-w-[8%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.quantity}
           </td>
-          <td className="w-full max-w-[15.85%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[168px] xl:w-full xl:max-w-[15.85%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.totalPrice}
           </td>
-          <td className="w-full max-w-[12%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[130px] xl:w-full xl:max-w-[12%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.deposits}
           </td>
           <td
-            className={`flex items-center justify-center shrink-0 w-[80px] h-[35px] ${
-              line.status === "Sale"
-                ? "bg-[rgba(58,151,76,0.1)]"
-                : "bg-[rgba(242,147,57,0.1)]"
+            className={`flex items-center justify-center shrink-0 w-[100px] h-[35px] ${
+              line.status === "Complete"
+                ? "bg-[#3a974c1a]"
+                : line.status === "Transport"
+                ? "bg-[#f293391a]"
+                : line.status === "Cancel"
+                ? "bg-[#d11a2a1a]"
+                : "bg-[#4285f41a]"
             } rounded-[22px]`}
           >
             <p
               className={`text-sm font-bold leading-[14px] ${
-                line.status === "Sale" ? "text-[#3A974C]" : "text-[#F29339]"
+                line.status === "Complete"
+                  ? "text-[#3A974C]"
+                  : line.status === "Transport"
+                  ? "text-[#F29339]"
+                  : line.status === "Cancel"
+                  ? "text-[#D11A2A]"
+                  : "text-[#4285F4]"
               }`}
             >
               {line.status}
@@ -190,7 +232,40 @@ export const DeliveryService = () => {
     <>
       <h2 className="text-2xl text-[#4285F4] font-bold">Đơn hàng</h2>
 
-      <div className="w-full flex justify-between mt-8">
+      <div className="mt-8 flex justify-between gap-[30px]">
+        {orderReport.map((item) => {
+          return (
+            <div key={item.id} className="w-full max-w-[22.4%] bg-[#fff] p-[25px] border-[1px] border-solid border-[#4285f44d] rounded-[20px] drop-shadow-[0px_4px_8px_rgba(31,31,31,0.10)]">
+              <div className="flex justify-between items-start">
+                <div>
+                  <p className="text-sm text-[#4285F4] font-semibold">
+                    {item.title}
+                  </p>
+                  <p className="text-[32px] text-[#04103B] font-bold">{item.data}</p>
+                </div>
+                <img src={bitmap} alt="" className="w-5 h-full" />
+              </div>
+              <div className="flex justify-between items-center">
+                <div className="flex items-end gap-[6px]">
+                  {item.increase ? <img src={arrowItemUp} alt="" />
+                  : <img src={arrowItemDown} alt="" />}
+                  <p className={`text-sm ${item.increase ? 'text-[#6AD2A0]' : 'text-[#EA8F95]'} font-bold leading-4`}>
+                    {item.increase ? '+' + item.increase + '%' : '-' + item.decrease + '%'}
+                  </p>
+                </div>
+                <Link
+                  to={"#"}
+                  className="text-xs text-[#4285F4] font-semibold underline"
+                >
+                  Xem báo cáo
+                </Link>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <div className="w-full flex justify-between mt-6">
         <GroupFuncKeys
           openFilter={openFilter}
           setOpenFilter={setOpenFilter}
@@ -200,27 +275,24 @@ export const DeliveryService = () => {
           setSoft={setSoft}
         />
 
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <div className="shrink-0 relative inline-flex items-center">
             <input
               type="text"
-              className="shrink-0 w-[260px] h-10 p-[12px_35px_12px_16px] rounded-[10px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.10)] outline-none"
+              className="shrink-0 w-[260px] h-10 p-[12px_16px] rounded-[10px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.10)] outline-none"
               placeholder="Search"
             />
-            <div className="shrink-0 w-3 h-3 absolute right-[23px]">
-              <img src={search} alt="" />
-            </div>
           </div>
 
           <button
-            onClick={() => setOpenModal(true)}
-            className="shink-0 w-full max-w-[122px] h-10 p-[4px_20px] flex items-center justify-center gap-[10px] bg-[#4285F4] rounded-[10px]"
+            // onClick={() => setOpenModal(true)}
+            className="shink-0 w-full max-w-[150px] h-10 p-[4px_20px] flex items-center justify-center gap-[10px] bg-[#4285F4] rounded-[10px]"
           >
-            <div className="shrink-0">
-              <img src={plus} alt="" />
+            <div className="shrink-0 w-3 h-3 right-[23px]">
+              <img src={search} alt="" />
             </div>
             <p className="text-[#fff] text-sm font-semibold leading-[18px]">
-              Tạo mới
+              Tìm kiếm
             </p>
           </button>
         </div>
@@ -242,7 +314,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[182px] xl:w-full xl:max-w-[17.17%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[182px] xl:w-full xl:max-w-[15.17%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Ngày đặt hàng{" "}
               <img
                 src={arrowDown}
@@ -292,7 +364,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[90px] xl:w-auto flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[100px] xl:w-auto flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Trạng thái{" "}
               <img
                 src={arrowDown}
@@ -308,7 +380,7 @@ export const DeliveryService = () => {
         <tbody>{renderDataTable()}</tbody>
       </table>
 
-      <DeliveryServiceModal openModal={openModal} setOpenModal={setOpenModal} />
+      {/* <DeliveryServiceModal openModal={openModal} setOpenModal={setOpenModal} /> */}
     </>
   );
 };

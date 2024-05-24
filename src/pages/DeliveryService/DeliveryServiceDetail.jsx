@@ -1,6 +1,6 @@
 import download from "../../assets/svgs/download.svg";
 import print from "../../assets/svgs/print.svg";
-import cardLogo from "../../assets/svgs/card-logo.svg";
+import cardLogo from "../../assets/imgs/logo.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -21,7 +21,7 @@ export const DeliveryServiceDetail = () => {
 
       <div className="p-[36px_40px] bg-[#FBFBFB] rounded-md flex mt-5">
         <div className="w-1/2">
-          <div className="flex w-[49px]">
+          <div className="flex w-[80px]">
             <img src={cardLogo} alt="" />
           </div>
 
