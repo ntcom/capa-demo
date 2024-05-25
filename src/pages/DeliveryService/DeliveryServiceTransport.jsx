@@ -37,7 +37,7 @@ export const DeliveryServiceTransport = () => {
               Xe đầu kéo 12m
             </p>
             <p className="text-[15px] text-[#1F1F1F] font-bold">
-              Xe đầu kéo 12m
+              29A-12452
             </p>
           </div>
         </div>

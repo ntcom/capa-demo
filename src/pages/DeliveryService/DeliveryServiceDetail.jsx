@@ -1,6 +1,6 @@
 import download from "../../assets/svgs/download.svg";
 import print from "../../assets/svgs/print.svg";
-import cardLogo from "../../assets/imgs/logo.png";
+import cardAva from "../../assets/imgs/card-ava.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -21,8 +21,8 @@ export const DeliveryServiceDetail = () => {
 
       <div className="p-[36px_40px] bg-[#FBFBFB] rounded-md flex mt-5">
         <div className="w-1/2">
-          <div className="flex w-[80px]">
-            <img src={cardLogo} alt="" />
+          <div className="flex w-[80px] h-[80px] rounded overflow-hidden">
+            <img src={cardAva} alt="" />
           </div>
 
           <div className="mt-[30px]">
@@ -38,7 +38,7 @@ export const DeliveryServiceDetail = () => {
             <div className="flex items-center gap-3">
               <p className="w-[26px] text-xs text-[#09F] text-right">Mail:</p>{" "}
               <Link to={"/"} className="tetx-[11px] text-[#828691]">
-                contact@capagroup.com
+              banhang@tranghuy.com
               </Link>
             </div>
             <div className="flex items-center gap-3">
