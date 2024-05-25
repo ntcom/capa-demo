@@ -71,7 +71,7 @@ export const Sidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <aside className="fixed top-0 left-0 bottom-0 shrink-0 w-[218px] 2xl:w-[268px] h-screen bg-[#fff] flex flex-col items-center">
+    <aside className="fixed top-0 left-0 bottom-0 shrink-0 w-[218px] 2xl:w-[268px] h-screen bg-[linear-gradient(270deg,#4285F4_-67.2%,#10439F_100%)] flex flex-col items-center">
       <div className="w-full flex items-center justify-center gap-[15px] p-[50px_20px]">
         <Link to={"/"} className="drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
           <img src={logo} alt="" className="w-[150px]" />
@@ -81,20 +81,20 @@ export const Sidebar = () => {
         </Link> */}
       </div>
 
-      <nav className="w-full">
+      <nav className="w-full px-5 flex flex-col gap-3">
         {navs.map((nav) => {
           return (
             <Link
               to={nav.link}
-              className="block py-[15px] hover:bg-[linear-gradient(90deg,rgba(66,133,244,.2)_0%,rgba(66,133,244,0.00)_30.98%)]"
+              className="block py-[8px] rounded-[10px] hover:bg-[linear-gradient(90deg,rgba(66,133,244,.2)_0%,rgba(66,133,244,0.00)_30.98%)]"
               style={{
                 background:
                   pathname === nav.link &&
-                  "linear-gradient(90deg, rgba(66, 133, 244, .2) 0%, rgba(66, 133, 244, 0.00) 30.98%)",
+                  "#fff",
               }}
               key={nav.id}
             >
-              <div className="px-[30px] flex items-center gap-4">
+              <div className="px-5 flex items-center gap-4">
                 <img
                   src={pathname === nav.link ? nav.iconActive : nav.icon}
                   alt=""
@@ -103,9 +103,9 @@ export const Sidebar = () => {
                 <p
                   className={`text-base ${
                     pathname === nav.link
-                      ? "text-[#4285F4]"
-                      : "text-[#03022980]"
-                  } font-bold whitespace-nowrap`}
+                      ? "text-[#4285F4] font-bold"
+                      : "text-[#fff] font-semibold"
+                  } whitespace-nowrap`}
                 >
                   {nav.name}
                 </p>
@@ -115,11 +115,11 @@ export const Sidebar = () => {
         })}
       </nav>
 
-      <div className="absolute bottom-[166px] w-full max-w-[77.06%] h-[145px] mx-auto  bg-[#80abff1a] rounded-[20px] p-[15px] flex flex-col items-center justify-between">
+      <div className="absolute bottom-[166px] w-full max-w-[77.06%] h-[145px] mx-auto bg-[#fff] bgs-[#80abff1a] rounded-[20px] p-[15px] flex flex-col items-center justify-between">
         <div className="w-[50%]">
           <img src={upgrade} alt="" />
         </div>
-        <button className="w-full h-[33px] rounded-[10px] bg-[#4285F4] shadow-[0px_4px_4px_0px_rgba(31,31,31,0.25)] self-end">
+        <button className="w-full h-[33px] rounded-[10px] bg-[#FF8057] shadow-[0px_4px_4px_0px_rgba(31,31,31,0.25)] self-end">
           <p className="text-xs text-[#fff] font-semibold">Cập nhật ngay</p>
         </button>
       </div>
@@ -130,8 +130,8 @@ export const Sidebar = () => {
             <img src={ava} alt="" />
           </button>
           <div>
-            <p className="text-sm text-[#1f1f1f] font-bold">Tony Nhiem</p>
-            <p className="text-sm text-[#1f1f1f99] font-medium">Free Account</p>
+            <p className="text-sm text-[#fff] font-bold">Tony Nhiem</p>
+            <p className="text-sm text-[#fff] texts-[#1f1f1f99] font-mediums">Free Account</p>
           </div>
         </div>
         <button className="shrink-0 flex">

@@ -21,7 +21,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "New",
+    status: {
+      type: 'new',
+      title: 'Tạo mới'
+    },
   },
   {
     stt: 2,
@@ -32,7 +35,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Transport",
+    status: {
+      type: "transport",
+      title: 'Đang vận chuyển'
+    },
   },
   {
     stt: 3,
@@ -43,7 +49,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Complete",
+    status: {
+      type: "complete",
+      title: "Hoàn thành"
+    },
   },
   {
     stt: 4,
@@ -54,7 +63,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Cancel",
+    status: {
+      type: "cancel",
+      title: "Huỷ"
+    },
   },
   {
     stt: 5,
@@ -65,7 +77,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Transport",
+    status: {
+      type: "transport",
+      title: 'Đang vận chuyển'
+    },
   },
   {
     stt: 6,
@@ -76,7 +91,10 @@ const dataTable = [
     quantity: 1,
     totalPrice: 3984000,
     deposits: 0,
-    status: "Complete",
+    status: {
+      type: "complete",
+      title: "Hoàn thành"
+    },
   },
   {
     stt: 7,
@@ -87,7 +105,10 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1593600,
     deposits: 8,
-    status: "Transport",
+    status: {
+      type: "transport",
+      title: 'Đang vận chuyển'
+    },
   },
   {
     stt: 8,
@@ -98,7 +119,10 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1593600,
     deposits: 8,
-    status: "New",
+    status: {
+      type: 'new',
+      title: 'Tạo mới'
+    },
   },
   {
     stt: 9,
@@ -109,7 +133,10 @@ const dataTable = [
     quantity: 0,
     totalPrice: 0,
     deposits: 0,
-    status: "Complete",
+    status: {
+      type: "complete",
+      title: "Hoàn thành"
+    },
   },
   {
     stt: 10,
@@ -120,7 +147,10 @@ const dataTable = [
     quantity: 1,
     totalPrice: 1992000,
     deposits: 10,
-    status: "Complete",
+    status: {
+      type: "complete",
+      title: "Hoàn thành"
+    },
   },
 ];
 
@@ -174,53 +204,53 @@ export const DeliveryService = () => {
           <td className="w-full max-w-[6.98%] text-[#030229] text-xs text-center font-normal">
             {line.stt}
           </td>
-          <td className="w-[110px] xl:w-full xl:max-w-[10.38%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[110px] xl:w-full xl:max-w-[10%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             <Link
-              to={line.status === "Transport" ? `transport/${line.code}` : `/delivery-service/${line.code}`}
+              to={line.status.type === "transport" ? `transport/${line.code}` : `/delivery-service/${line.code}`}
               className="text-[#4285F4] hover:underline"
             >
               {line.code}
             </Link>
           </td>
-          <td className="w-[182px] xl:w-full xl:max-w-[15.17%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[172px] xl:w-full xl:max-w-[15%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             <img src={calendar} alt="" className="block shrink-0 w-[12.6px]" />
             {line.date}
           </td>
-          <td className="w-[230px] xl:w-full xl:max-w-[21.7%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[220px] xl:w-full xl:max-w-[21%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.product}
           </td>
           <td className="w-[90px] xl:w-full xl:max-w-[8%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.quantity}
           </td>
-          <td className="w-[168px] xl:w-full xl:max-w-[15.85%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[150px] xl:w-full xl:max-w-[15%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.totalPrice}
           </td>
-          <td className="w-[130px] xl:w-full xl:max-w-[12%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
+          <td className="w-[120px] xl:w-full xl:max-w-[12%] flex items-center gap-[10px] text-[#030229] text-sm font-semibold whitespace-nowrap">
             {line.deposits}
           </td>
           <td
-            className={`flex items-center justify-center shrink-0 w-[100px] h-[35px] ${
-              line.status === "Complete"
+            className={`flex items-center justify-center shrink-0 w-[140px] h-[35px] ${
+              line.status.type === "complete"
                 ? "bg-[#3a974c1a]"
-                : line.status === "Transport"
+                : line.status.type === "transport"
                 ? "bg-[#f293391a]"
-                : line.status === "Cancel"
+                : line.status.type === "cancel"
                 ? "bg-[#d11a2a1a]"
                 : "bg-[#4285f41a]"
             } rounded-[22px]`}
           >
             <p
               className={`text-sm font-bold leading-[14px] ${
-                line.status === "Complete"
+                line.status.type === "complete"
                   ? "text-[#3A974C]"
-                  : line.status === "Transport"
+                  : line.status.type === "transport"
                   ? "text-[#F29339]"
-                  : line.status === "Cancel"
+                  : line.status.type === "cancel"
                   ? "text-[#D11A2A]"
                   : "text-[#4285F4]"
               }`}
             >
-              {line.status}
+              {line.status.title}
             </p>
           </td>
         </tr>
@@ -304,7 +334,7 @@ export const DeliveryService = () => {
             <th className="w-[74px] xl:w-full xl:max-w-[6.98%] text-[#030229] text-xs font-normal">
               STT
             </th>
-            <th className="w-[110px] xl:w-full xl:max-w-[10.38%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[110px] xl:w-full xl:max-w-[10%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Mã đơn hàng{" "}
               <img
                 src={arrowDown}
@@ -314,7 +344,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[182px] xl:w-full xl:max-w-[15.17%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[172px] xl:w-full xl:max-w-[15%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Ngày đặt hàng{" "}
               <img
                 src={arrowDown}
@@ -324,7 +354,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[230px] xl:w-full xl:max-w-[21.7%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[220px] xl:w-full xl:max-w-[21%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Sản phẩm{" "}
               <img
                 src={arrowDown}
@@ -344,7 +374,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[168px] xl:w-full xl:max-w-[15.85%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[150px] xl:w-full xl:max-w-[15%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Tổng số tiền{" "}
               <img
                 src={arrowDown}
@@ -354,7 +384,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[130px] xl:w-full xl:max-w-[12%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[120px] xl:w-full xl:max-w-[12%] flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Đã đặt cọc{" "}
               <img
                 src={arrowDown}
@@ -364,7 +394,7 @@ export const DeliveryService = () => {
                 }`}
               />
             </th>
-            <th className="w-[100px] xl:w-auto flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
+            <th className="w-[140px] xl:w-auto flex items-center gap-3 text-[#030229] text-xs font-normal whitespace-nowrap">
               Trạng thái{" "}
               <img
                 src={arrowDown}
