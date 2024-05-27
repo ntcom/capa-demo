@@ -30,7 +30,7 @@ export const DeliveryServiceDetail = () => {
               Nhân viên kinh doanh
             </p>
             <p className="tetx-[22px] text-[#828691] font-bold capitalize mt-[18px]">
-              Công ty Cổ phần Capa Group
+              Công ty TNHH Trang Huy Logistics
             </p>
           </div>
 
@@ -44,7 +44,7 @@ export const DeliveryServiceDetail = () => {
             <div className="flex items-center gap-3">
               <p className="w-[26px] text-xs text-[#09F] text-right">Tax:</p>{" "}
               <Link to={"/"} className="tetx-[11px] text-[#828691]">
-                +84 999 999 999
+                +84 934 525 315
               </Link>
             </div>
           </div>
@@ -135,7 +135,7 @@ export const DeliveryServiceDetail = () => {
             <span className="shrink-0 w-[6px] h-[6px] rounded-[100px] bg-[#09F]"></span>
             <div className="flex items-center gap-[10px]">
               <p className="text-[11px] text-[#828691] font-semibold">STK:</p>
-              <p className="text-[11px] text-[#1083FF] font-semibold">0986999999</p>
+              <p className="text-[11px] text-[#1083FF] font-semibold">0934 525 315</p>
             </div> 
           </div>
         </div>
@@ -154,17 +154,17 @@ export const DeliveryServiceDetail = () => {
 
       <div className="mt-[35px] p-[15px_0_4px] border-t-[1px] border-solid border-[#E7E8EC] flex justify-between">
         <div>
-          <p className="text-[10px] text-[#828691] font-bold">Capa Group</p>
-          <p className="text-[10px] text-[#828691] mt-[5px]">111 Ngoai Giao Doan, Bac Tu Liem, Ha Noi</p>
+          <p className="text-[10px] text-[#828691] font-bold">Trang Huy Logistics</p>
+          <p className="text-[10px] text-[#828691] mt-[5px]">129 Phạm Văn Đồng, Xuân Đỉnh, Bắc Từ Liêm, Hà Nội</p>
         </div>
         <div>
           <div className="flex gap-3 items-center">
             <p className="w-[24px] text-[10px] text-[#09F] font-bold text-right">Mail:</p>
-            <Link to={'/'} className="text-[10px] text-[#828691]">contact@capagroup.com</Link>
+            <Link to={'/'} className="text-[10px] text-[#828691]">contact@tranghuy.com</Link>
           </div>
           <div className="flex gap-3 items-center">
             <p className="w-[24px] text-[10px] text-[#09F] font-bold text-right">Tax:</p>
-            <Link to={'/'} className="text-[10px] text-[#828691]">+84 999 999 999</Link>
+            <Link to={'/'} className="text-[10px] text-[#828691]">+84 934 525 315</Link>
           </div>
         </div>
         <div>
