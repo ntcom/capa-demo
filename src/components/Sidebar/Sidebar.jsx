@@ -13,7 +13,7 @@ import contractIconActive from "../../assets/svgs/contract-active.svg";
 import { useLocation } from "react-router-dom";
 import upgrade from "../../assets/svgs/upgrade.svg";
 import ava from "../../assets/imgs/ava.png";
-import logout from "../../assets/svgs/logout.svg";
+import logout from "../../assets/svgs/logout2.svg";
 
 const navs = [
   {
