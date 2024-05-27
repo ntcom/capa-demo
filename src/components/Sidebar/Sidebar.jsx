@@ -134,9 +134,9 @@ export const Sidebar = () => {
             <p className="text-sm text-[#fff] texts-[#1f1f1f99] font-mediums">Free Account</p>
           </div>
         </div>
-        <button className="shrink-0 flex">
+        <Link to={'/login'} className="shrink-0 flex">
           <img src={logout} alt="" />
-        </button>
+        </Link>
       </div>
     </aside>
   );
