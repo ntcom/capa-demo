@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/imgs/logo.png";
+import logo from "../../assets/imgs/logo2.png";
 import infoIcon from "../../assets/svgs/info.svg";
 import infoIconActive from "../../assets/svgs/info-active.svg";
 import passwordIcon from "../../assets/svgs/password.svg";
@@ -120,7 +120,7 @@ export const Sidebar = () => {
           <img src={upgrade} alt="" />
         </div>
         <button className="w-full h-[33px] rounded-[10px] bg-[#FF8057] shadow-[0px_4px_4px_0px_rgba(31,31,31,0.25)] self-end">
-          <p className="text-xs text-[#fff] font-semibold">Cập nhật ngay</p>
+          <p className="text-xs text-[#fff] font-semibold">Sàn vận tải</p>
         </button>
       </div>
 
