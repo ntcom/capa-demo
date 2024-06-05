@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/imgs/logo2.png";
 import infoIcon from "../../assets/svgs/info.svg";
 import infoIconActive from "../../assets/svgs/info-active.svg";
-import passwordIcon from "../../assets/svgs/password.svg";
-import passwordIconActive from "../../assets/svgs/password-active.svg";
+// import passwordIcon from "../../assets/svgs/password.svg";
+// import passwordIconActive from "../../assets/svgs/password-active.svg";
 // import walletIcon from "../../assets/svgs/wallet.svg";
 // import walletIconActive from "../../assets/svgs/wallet-active.svg";
 import contractIcon from "../../assets/svgs/contract.svg";
@@ -18,17 +18,17 @@ import logout from "../../assets/svgs/logout2.svg";
 const navs = [
   {
     id: 1,
-    name: "Hồ sơ của tôi",
-    icon: infoIcon,
-    iconActive: infoIconActive,
-    link: "/profile",
+    name: "Đơn hàng",
+    icon: contractIcon,
+    iconActive: contractIconActive,
+    link: "/delivery-service",
   },
   {
     id: 2,
-    name: "Đổi mật khẩu",
-    icon: passwordIcon,
-    iconActive: passwordIconActive,
-    link: "/change-password",
+    name: "Thông tin",
+    icon: infoIcon,
+    iconActive: infoIconActive,
+    link: "/profile",
   },
   // {
   //   id: 3,
@@ -51,15 +51,8 @@ const navs = [
   //     },
   //   ],
   // },
-  {
-    id: 4,
-    name: "Đơn hàng",
-    icon: contractIcon,
-    iconActive: contractIconActive,
-    link: "/delivery-service",
-  },
   // {
-  //   id: 5,
+  //   id: 4,
   //   name: "Đơn hàng mua hộ",
   //   icon: getIcon,
   //   iconActive: getIconActive,
@@ -72,8 +65,11 @@ export const Sidebar = () => {
 
   return (
     <aside className="fixed top-0 left-0 bottom-0 shrink-0 w-[218px] 2xl:w-[268px] h-screen bg-[linear-gradient(270deg,#4285F4_-67.2%,#10439F_100%)] flex flex-col items-center">
-      <div className="w-full flex items-center justify-center gap-[15px] p-[50px_20px]">
-        <Link to={"/"} className="drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
+      <div className="w-full flex items-center justify-center gap-[15px] p-[50px_20px_70px]">
+        <Link
+          to={"/delivery-service"}
+          className="drop-shadow-[0px_4px_4px_rgba(0,0,0,0.25)] w-full p-[8px_20px] rounded-3xl bg-[#fff] flex justify-center"
+        >
           <img src={logo} alt="" className="w-[150px]" />
         </Link>
         {/* <Link to={"/"} className="text-[#4285F4] text-2xl font-bold">
@@ -88,9 +84,7 @@ export const Sidebar = () => {
               to={nav.link}
               className="block py-[8px] rounded-[10px] hover:bg-[linear-gradient(90deg,rgba(66,133,244,.2)_0%,rgba(66,133,244,0.00)_30.98%)]"
               style={{
-                background:
-                  pathname === nav.link &&
-                  "#fff",
+                background: pathname === nav.link && "#fff",
               }}
               key={nav.id}
             >
@@ -131,10 +125,12 @@ export const Sidebar = () => {
           </button>
           <div>
             <p className="text-sm text-[#fff] font-bold">Tony Nhiem</p>
-            <p className="text-sm text-[#fff] texts-[#1f1f1f99] font-mediums">Free Account</p>
+            <p className="text-sm text-[#fff] texts-[#1f1f1f99] font-mediums">
+              Free Account
+            </p>
           </div>
         </div>
-        <Link to={'/login'} className="shrink-0 flex">
+        <Link to={"/login"} className="shrink-0 flex">
           <img src={logout} alt="" />
         </Link>
       </div>

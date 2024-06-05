@@ -8,7 +8,7 @@ export const Root = () => {
 
   window.onload = () => {
     if (pathname === "/") {
-      navigation("profile");
+      navigation("delivery-service");
     }
   };
 

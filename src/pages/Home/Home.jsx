@@ -1,45 +1,46 @@
 import camera from "../../assets/svgs/camera.svg";
-import cardLogo from "../../assets/imgs/logo.png";
+// import cardLogo from "../../assets/imgs/logo.png";
 import Input from "../../components/Input";
 import SelectCustom from "../../components/SelectCustom/SelectCustom";
+import { ChangePassword } from "../../components/ChangePassword/ChangePassword";
 
 const nationData = ["Vietnam", "Cuba", "Rusia", "Japan", "USA"];
 const cityData = ["Hanoi", "Vinh", "Danang", "Dalat", "TP.HCM"];
 
-const deliveryAddress = [
-  {
-    id: 1,
-    name: "Mr. Nhiem",
-    email: "nhiemnguyen@gmail.com",
-    phone: "+84 986 999 999",
-    address: "123 An Binh City, Bac Tu Liem, Ha Noi, Viet nam",
-    default: true,
-  },
-  {
-    id: 2,
-    name: "Ms. Yen",
-    email: "yenrose@gmail.com",
-    phone: "+84 986 999 999",
-    address: "789 Tower, Ngoai giao doan, Bac Tu Liem, Ha Noi, Viet nam",
-    default: false,
-  },
-  {
-    id: 3,
-    name: "Mr. Thang",
-    email: "thang123@gmail.com",
-    phone: "+84 988 988 988",
-    address: "Cau Giay, Ha Noi, Viet nam",
-    default: false,
-  },
-];
+// const deliveryAddress = [
+//   {
+//     id: 1,
+//     name: "Mr. Nhiem",
+//     email: "nhiemnguyen@gmail.com",
+//     phone: "+84 986 999 999",
+//     address: "123 An Binh City, Bac Tu Liem, Ha Noi, Viet nam",
+//     default: true,
+//   },
+//   {
+//     id: 2,
+//     name: "Ms. Yen",
+//     email: "yenrose@gmail.com",
+//     phone: "+84 986 999 999",
+//     address: "789 Tower, Ngoai giao doan, Bac Tu Liem, Ha Noi, Viet nam",
+//     default: false,
+//   },
+//   {
+//     id: 3,
+//     name: "Mr. Thang",
+//     email: "thang123@gmail.com",
+//     phone: "+84 988 988 988",
+//     address: "Cau Giay, Ha Noi, Viet nam",
+//     default: false,
+//   },
+// ];
 
 export const Home = () => {
-  const checkCard = deliveryAddress.filter((item) => {
-    if(item.default === true) {
-      return item.id;
-    }
-  } )
-  const defaultAddress = checkCard[0].id;
+  // const checkCard = deliveryAddress.filter((item) => {
+  //   if (item.default === true) {
+  //     return item.id;
+  //   }
+  // });
+  // const defaultAddress = checkCard[0].id;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +49,7 @@ export const Home = () => {
   return (
     <div className="flex gap-[30px]">
       <div className="w-1/2 bg-[#fff] rounded-[10px] p-[30px]">
-        <p className="text-2xl text-[#030229] font-bold">Hồ sơ của tôi</p>
+        <p className="text-2xl text-[#4285F4] font-bold">Hồ sơ của tôi</p>
         <form onSubmit={handleSubmit} className="mt-[30px]">
           <label className="w-[134px] h-[134px] mx-auto bg-[#FAFAFB] rounded-[999px] flex justify-center items-center relative overflow-hidden">
             <input
@@ -61,7 +62,12 @@ export const Home = () => {
           </label>
 
           <div className="flex flex-col gap-5">
-            <Input label={"Mã"} id={"code"} defaultValue={"#876370"} height={"50px"} />
+            <Input
+              label={"Mã"}
+              id={"code"}
+              defaultValue={"#876370"}
+              height={"50px"}
+            />
             <Input
               label={"Tên"}
               required={true}
@@ -79,7 +85,7 @@ export const Home = () => {
                 height={"50px"}
               />
               <Input
-                type={'number'}
+                type={"number"}
                 label={"Số điện thoại"}
                 required={true}
                 id={"phonenumber"}
@@ -121,7 +127,7 @@ export const Home = () => {
           </button>
         </form>
       </div>
-      <div className="w-1/2 bg-[#fff] rounded-[10px] p-[30px]">
+      {/* <div className="w-1/2 bg-[#fff] rounded-[10px] p-[30px]">
         <p className="text-2xl text-[#030229] font-bold">Địa chỉ giao hàng</p>
 
         {deliveryAddress.map((item) => {
@@ -204,7 +210,8 @@ export const Home = () => {
             );
           }
         })}
-      </div>
+      </div> */}
+      <ChangePassword />
     </div>
   );
 };
