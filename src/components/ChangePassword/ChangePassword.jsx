@@ -52,7 +52,7 @@ export const ChangePassword = () => {
 
         <Link
           to={"/login"}
-          className="mt-14 w-full h-[50px] self-center rounded-[10px] bg-[#4285F4] text-lg text-[#fff] font-bold flex justify-center items-center"
+          className="mt-14 w-full max-w-[300px] mx-auto h-[50px] self-center rounded-[10px] bg-[#4285F4] text-lg text-[#fff] font-bold flex justify-center items-center"
         >
           Thay đổi mật khẩu
         </Link>
