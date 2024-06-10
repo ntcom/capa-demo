@@ -39,7 +39,7 @@ export default function Weather({ setWeatherPopup }) {
         <div className="mt-6 flex-grow">
           <div>
             <p className="text-4xl text-[#fff] font-extrabold text-center mt-6 whitespace-nowrap">
-              Chào buổi tối, Nhiệm
+              Xin chào, Nhiệm
             </p>
             <p className="text-2xl text-[#fff] font-semibold text-center mt-3">
               {weatherData.name === "Hanoi" && "Hà Nội"}{" "}
