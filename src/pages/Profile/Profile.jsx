@@ -122,9 +122,11 @@ export const Home = () => {
             />
           </div>
 
-          <button className="w-full h-[52px] bg-[#4285F4] rounded-[10px] mt-[50px] text-lg text-[#fff] font-bold">
-            Cập nhật thông tin
-          </button>
+          <div className="w-full flex justify-center">
+            <button className="w-full max-w-[300px] h-[52px] bg-[#4285F4] rounded-[10px] mt-[50px] text-lg text-[#fff] font-bold">
+              Cập nhật thông tin
+            </button>
+          </div>
         </form>
       </div>
       {/* <div className="w-1/2 bg-[#fff] rounded-[10px] p-[30px]">

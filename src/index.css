@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,7 +29,7 @@ img {
   width: 2px;
 }
 
-.overflow-y-auto::-webkit-scrollbar-thumb, 
+.overflow-y-auto::-webkit-scrollbar-thumb,
 .overflow-y-auto::-webkit-scrollbar-track {
   visibility: hidden;
 }
@@ -85,15 +85,15 @@ img {
 }
 
 .current-radio:checked + .custom-radio {
-  border-color: #4285F4;
+  border-color: #4285f4;
 }
 
 .current-radio:checked + .custom-radio::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 12px;
   height: 12px;
-  background-color: #4285F4;
+  background-color: #4285f4;
   border-radius: 100px;
 }
 /* End custom radio button */
@@ -103,3 +103,13 @@ img {
   display: none;
 }
 /* End select */
+
+.temp-gradient {
+  font-family: "Inter", sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  background: linear-gradient(180deg, #fff 28.65%, rgba(255, 255, 255, 0) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

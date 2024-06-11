@@ -14,6 +14,7 @@ import vector4 from "../../assets/svgs/login/vector4.svg";
 import vector5 from "../../assets/svgs/login/vector5.svg";
 import vector6 from "../../assets/svgs/login/vector6.svg";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Login = () => {
   const [eye, setEye] = useState(false);
@@ -111,7 +112,7 @@ export const Login = () => {
                 <img src={eyeIcon} alt="eye icon" />
               )}
             </div>
-            <button
+            <Link to={'/'}
               style={{
                 background:
                   "linear-gradient(224deg, rgba(210, 0, 98, 0.55) -56.57%, rgba(38, 102, 207, 0.95) 70.27%)",
@@ -119,7 +120,7 @@ export const Login = () => {
               className="absolute right-0 h-full w-10 md:w-12 2xl:w-14 flex justify-center items-center rounded-[0_12px_12px_0]"
             >
               <img src={chevronRight} alt="" className="w-2 lg:w-3 2xl:w-4" />
-            </button>
+            </Link>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Root } from "./routes/Root.jsx";
 import { Login } from "./pages/Login/Login.jsx";
-import { Home } from "./pages/Home/Home.jsx";
+import { Home } from "./pages/Profile/Profile.jsx";
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage.jsx";
 import { DeliveryService } from "./pages/DeliveryService/DeliveryService.jsx";
 import { DeliveryServiceDetail } from "./pages/DeliveryService/DeliveryServiceDetail.jsx";
@@ -20,8 +20,9 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "/",
-        element: <Home />,
+        path: "delivery-service",
+        element: <DeliveryService />,
+        
       },
       {
         path: "profile",
@@ -30,11 +31,6 @@ const router = createBrowserRouter([
       {
         path: "wallet",
         element: <Wallet />,
-      },
-      {
-        path: "delivery-service",
-        element: <DeliveryService />,
-        
       },
       {
         path: "delivery-service/:deliveryServiceId",
