@@ -21,7 +21,7 @@ export default function Weather({ setWeatherPopup }) {
 
   return (
     <div className="fixed top-0 left-0 right-0 bottom-0 bg-[rgb(31,31,31,.3)] flex justify-center items-center">
-      <div className="relative w-[40vw] h-[300px] rounded-[60px] bg-[linear-gradient(125deg,#67E1D2_5.59%,#54A8FF_93.57%)] p-5 flex">
+      <div className="relative w-[615px] h-[300px] rounded-[60px] bg-[linear-gradient(125deg,#67E1D2_5.59%,#54A8FF_93.57%)] p-5 flex">
         <button
           onClick={() => setWeatherPopup(false)}
           className="w-8 absolute -top-6 -right-6 p-1"
@@ -45,7 +45,7 @@ export default function Weather({ setWeatherPopup }) {
               {weatherData.name === "Hanoi" && "Hà Nội"}{" "}
               {weatherData.weather?.[0].main === "Clouds"
                 ? "nhiều mây"
-                : weatherData.weather?.[0].main === "Rain" && "có mưa nhẹ"}
+                : weatherData.weather?.[0].description === "light rain" && "có mưa nhẹ"}
             </p>
           </div>
           <div className="flex justify-end mr-12">
